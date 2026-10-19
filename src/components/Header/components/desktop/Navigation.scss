@@ -1,0 +1,52 @@
+@use '../../../../styles//variables' as *;
+
+.navigation {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+  }
+  &__item:hover > .navigation-dropdown,
+  &__item:focus-within > .navigation-dropdown {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__button,
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 0;
+    border: none;
+    background: none;
+
+    color: $white;
+    font-size: 1.6rem;
+    font-family: 'rfDewiThin';
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  &__button {
+    cursor: pointer;
+  }
+
+  &__button img {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+}

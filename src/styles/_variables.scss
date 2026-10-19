@@ -1,0 +1,53 @@
+$color-text: #121214;
+$color-background: #ffffff;
+$blue: #49D0FF;
+$light_gray: #8C8F96;
+$dark_gray: #303030;
+$white: #FFFFFF;
+
+$container-width: 1440px;
+$container-padding-desktop: 32px;
+$container-padding-mobile: 16px;
+
+@mixin flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+@font-face {
+  font-family: 'rfDewiThin';
+  src: url(../assets/fonts/RF_Dewi_Extended/RFDewi-Thin.ttf);
+}
+@font-face {
+  font-family: 'rfDewiRegular';
+  src: url(../assets/fonts/RF_Dewi_Extended/RFDewi-Regular.ttf);
+}
+@font-face {
+  font-family: 'rfDewiSemiBold';
+  src: url(../assets/fonts/RF_Dewi_Extended/RFDewi-Semibold.ttf);
+}
+@font-face {
+  font-family: 'rfDewiBold';
+  src: url(../assets/fonts/RF_Dewi_Extended/RFDewi-Bold.ttf);
+}
+@font-face {
+  font-family: 'rfDewiUltraBold';
+  src: url(../assets/fonts/RF_Dewi_Extended/RFDewi-Ultrabold.ttf);
+}
+@font-face {
+  font-family: 'rfDewiBlack';
+  src: url(../assets/fonts/RF_Dewi_Extended/RFDewi-Black.ttf);
+}
+
+@font-face {
+  font-family: 'ceraProBold';
+  src: url(../assets/fonts/cera_pro_font/Cera_Pro_Bold.ttf);
+}

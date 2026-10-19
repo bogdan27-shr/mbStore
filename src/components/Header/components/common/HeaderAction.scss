@@ -1,0 +1,183 @@
+@use '../../../../styles/variables' as *;
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  &__button {
+    @include flex-center;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+
+    img {
+      display: block;
+      width: auto;
+      height: 18px;
+    }
+  }
+
+  &--catalog {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__search-form {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    height: 36px;
+    padding: 0 12px 0 16px;
+    box-sizing: border-box;
+    border: 1px solid #292929;
+    border-radius: 22px;
+
+    input {
+      flex: 1;
+      width: 100%;
+      min-width: 0;
+      padding: 0;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #fff;
+      font-family: 'rfDewiSemiBold';
+      font-size: 1.4rem;
+      padding-left: 12px;
+    }
+
+    input[type='search'] {
+      &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        appearance: none;
+        display: none;
+      }
+    }
+
+    input::placeholder {
+      color: #777;
+    }
+
+    button {
+      @include flex-center;
+      flex: 0 0 auto;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+
+
+.header-actions {
+  &__cart {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #92949a;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  &__cart-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  &__cart-total {
+    font-family: 'rfDewiBold';
+    font-size: 2rem;
+    line-height: 1;
+    color: #92949a;
+  }
+
+  &__cart-count {
+    @include flex-center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: $blue;
+    color: #ffffff;
+    font-family: 'rfDewiBold';
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+}
+
+
+
+.header-actions__search-form {
+  &--expandable {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: width 0.35s ease;
+
+    .header-actions__search-button {
+      order: 0;
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: transparent;
+      transform: translateX(-17px);
+    }
+
+    input {
+      order: 1;
+      flex: 0 0 0;
+      width: 0;
+      min-width: 0;
+      height: 40px;
+      box-sizing: border-box;
+      padding: 0;
+      border: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition:
+        width 0.35s ease,
+        opacity 0.2s ease,
+        padding 0.35s ease;
+    }
+
+    &.is-open {
+      width: 260px;
+
+      input {
+        flex-basis: 220px;
+        width: 220px;
+        padding: 10px 8px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &__search-button {
+    @include flex-center;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+}

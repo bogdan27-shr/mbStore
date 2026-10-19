@@ -1,0 +1,57 @@
+@use '../../../../styles/variables' as *;
+
+.navigation-dropdown {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: -20px;
+
+  min-width: 220px;
+  padding-top: 12px;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+
+  &__content {
+    padding: 20px 24px;
+    background-color: $color-text;
+    color: $color-text;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    color: $white;
+    font-family: 'rfDewiSemiBold';
+    font-size: 1.4rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    color: $white;
+    font-family: 'rfDewiRegular';
+    font-size: 1.4rem;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}

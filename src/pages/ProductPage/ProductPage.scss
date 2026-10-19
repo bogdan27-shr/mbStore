@@ -1,0 +1,312 @@
+@use '../../styles/variables' as *;
+
+.product-page {
+  width: 100%;
+  min-height: 100vh;
+  color: #111;
+  background: #fff;
+
+  &__status {
+    max-width: 1340px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: 'rfDewiRegular';
+    font-size: 1.6rem;
+  }
+
+  &__breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    width: calc(100% - 48px);
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 18px 0;
+    color: #777;
+    font-family: 'rfDewiRegular';
+    font-size: 1.1rem;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: #111;
+      }
+    }
+  }
+}
+
+.product {
+  display: grid;
+  width: calc(100% - 48px);
+  max-width: 1340px;
+  margin: 12px auto 70px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 64px;
+
+  &__gallery {
+    min-width: 0;
+  }
+
+  &__main-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 350px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__thumbnails {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 240px;
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  &__thumbnail {
+    @include flex-center;
+    width: 100%;
+    height: 48px;
+    padding: 3px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__gallery-indicator {
+    position: relative;
+    width: 240px;
+    max-width: 100%;
+    height: 2px;
+    margin-top: 4px;
+    overflow: hidden;
+    background: #dedede;
+  }
+
+  &__gallery-indicator-active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #20b9f3;
+    transition: transform 0.25s ease;
+  }
+
+  &__info {
+    min-width: 0;
+    padding-top: 8px;
+  }
+
+  &__title {
+    margin: 0 0 18px;
+    font-family: 'rfDewiBlack';
+    font-size: 3.1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  &__label {
+    margin: 0 0 10px;
+    color: $dark_gray;
+    font-family: 'rfDewiSemiBold';
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__sizes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    max-width: 360px;
+  }
+
+  &__size {
+    @include flex-center;
+    min-height: 38px;
+    padding: 8px 5px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    color: #111;
+    font-family: 'rfDewiBold';
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+
+    &:hover {
+      border-color: #20b9f3;
+    }
+
+    &--active {
+      border-color: #20b9f3;
+      background: #20b9f3;
+      color: #fff;
+    }
+  }
+
+  &__purchase {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  &__price {
+    margin: 0;
+    font-family: 'rfDewiBold';
+    font-size: 1.8rem;
+  }
+
+  &__availability {
+    margin: 5px 0 0;
+    color: #777;
+    font-family: 'rfDewiRegular';
+    font-size: 1.1rem;
+  }
+
+  &__add-button {
+    @include flex-between;
+    gap: 22px;
+    min-height: 42px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 5px;
+    background: $color-text;
+    color: #fff;
+    font-family: 'rfDewiUltraBold';
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #333;
+    }
+
+    span {
+      font-size: 2rem;
+      line-height: 1;
+    }
+  }
+}
+
+.product-details {
+  border-top: 1px solid #f0f0f0;
+
+  &__tabs {
+    display: flex;
+    gap: 28px;
+    max-width: 1120px;
+    margin: 0 auto;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  &__tab {
+    position: relative;
+    padding: 16px 0;
+    border: none;
+    background: transparent;
+    color: #999;
+    font-family: 'rfDewiRegular';
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    &--active {
+      color: #111;
+
+      &::after {
+        position: absolute;
+        right: 0;
+        bottom: -1px;
+        left: 0;
+        height: 2px;
+        background: #20b9f3;
+        content: '';
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 14px;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 26px 0 45px;
+    font-family: 'rfDewiRegular';
+    font-size: 1.2rem;
+
+    >div {
+      display: grid;
+      grid-template-columns: 130px minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    dt {
+      color: #777;
+    }
+
+    dd {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  &__text {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 28px 0 45px;
+    font-family: 'rfDewiRegular';
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+}
+
+.product-details__tabs,
+.product-details__list,
+.product-details__text {
+  width: calc(100% - 48px);
+  max-width: 1340px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.recommended-products {
+  width: calc(100% - 48px);
+  max-width: 1340px;
+  margin: 45px auto 80px;
+
+  &__title {
+    margin: 0 0 28px;
+    font-family: 'rfDewiBlack';
+    font-size: 2.4rem;
+    line-height: 1.2;
+    color: #000;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
