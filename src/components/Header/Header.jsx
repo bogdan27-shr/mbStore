@@ -19,7 +19,7 @@ export default function Header() {
       </div>
 
       <div className="header-mobile">
-        <HeaderMobile />
+        <HeaderMobile isCatalogPage={isCatalogPage} />
       </div>
     </>
   );
