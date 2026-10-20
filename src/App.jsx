@@ -6,6 +6,7 @@ import CatalogPage from './pages/CatalogPage/CatalogPage.jsx';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import CartPage from './pages/CartPage/CartPage';
 import BrandsPage from './pages/BrandsPage/BrandsPage.jsx';
+import CheckoutPage from './pages/CheckoutPage/CheckoutPage.jsx';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <Route path="/favorites" element={<FavoritesPage />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/brands" element={<BrandsPage />} />
+      <Route path="/checkout" element={<CheckoutPage />} />
     </Routes>
   );
 }

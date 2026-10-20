@@ -6,7 +6,7 @@
   &__main {
     width: calc(100% - 48px);
     max-width: 1340px;
-    margin: 0 auto;
+    margin: 0 auto 45px;
   }
 
   &__breadcrumbs {
@@ -42,5 +42,47 @@
     margin: 40px auto;
     font-family: 'rfDewiRegular';
     font-size: 1.4rem;
+  }
+}
+
+@media (max-width:1450px) {
+  .catalog-page__breadcrumbs {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1230px) {
+  .catalog-page__breadcrumbs {
+    width: 940px;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 1025px) {
+  .header-actions__search-form input {
+    font-size: 1rem;
+  }
+
+  .header-actions__search-form {
+    height: 30px;
+  }
+
+  .catalog-page__layout {
+    grid-template-columns: 170px minmax(0, 1fr);
+  }
+
+  .product-card__favorite img {
+    width: 13px;
+    height: 13px;
+  }
+
+  .product-card__image {
+    height: 135px;
+  }
+  .catalog-products__sort select{
+    width: 150px !important;
+    padding: 6px 36px 6px 12px !important;
   }
 }

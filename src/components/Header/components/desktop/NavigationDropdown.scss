@@ -55,3 +55,19 @@
     }
   }
 }
+
+@media (max-width: 1025px) {
+  .navigation-dropdown{
+    width: 140px; 
+    min-width: 100px;
+  }
+  .navigation-dropdown__title{
+    font-size: 1.2rem;
+  }
+  .navigation-dropdown__list{
+    gap: 7px;
+  }
+  .navigation-dropdown__link{
+    font-size: 1.1rem;
+  }
+}

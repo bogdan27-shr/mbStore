@@ -114,3 +114,132 @@
     font-size: 1.6rem;
   }
 }
+
+
+@media (max-width: 1650px) {
+  .home-products {
+    max-width: 1227px;
+  }
+
+  .product-card__image {
+    height: 300px;
+  }
+}
+
+
+
+@media (max-width: 1450px) {
+  .home-products {
+    width: calc(100% - 48px);
+    max-width: 900px;
+  }
+
+  .home-products__grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .home-products .product-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .home-products .product-card__image {
+    width: 85%;
+    height: 230px;
+    margin-inline: auto;
+  }
+
+  .home-products__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .home-products__grid .product-card:nth-child(n + 4) {
+    display: none;
+  }
+
+  .product-card__image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 1281px) {
+  .home-products {
+    max-width: 800px;
+  }
+
+  .home-products__grid {
+    gap: 14px;
+  }
+
+  .home-products .product-card__image {
+    height: 190px;
+    width: 80%;
+  }
+
+  .home-products__header {
+    margin-bottom: 15px;
+  }
+
+  .home-products__title {
+    font-size: 2.6rem;
+    line-height: 3.6rem;
+  }
+
+  .home-products__link {
+    font-size: 1.1rem;
+  }
+
+  .product-card__favorite img {
+    width: 16px;
+    height: 16px;
+  }
+
+
+  .home-products .product-card__image {
+    height: 150px;
+  }
+
+  .product-card__title {
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+  }
+
+  .product-card__price {
+    font-size: 1.1rem;
+    line-height: 1rem;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1281px) {
+  .home-products__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .home-products__grid .product-card:nth-child(n + 4) {
+    display: block;
+  }
+}
+
+@media (max-width: 1281px) {
+  .home-products {
+    margin-top: 60px;
+    width: 750px;
+  }
+
+
+  .home-products__header {
+    margin-bottom: 10px;
+  }
+
+  .home-products__title {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .home-products__link {
+    font-size: 1rem;
+  }
+}

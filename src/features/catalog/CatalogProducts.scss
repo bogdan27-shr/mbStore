@@ -146,3 +146,43 @@
     font-size: 1.4rem;
   }
 }
+
+
+@media (max-width: 1450px) {
+  .catalog-products {
+    width: 100%;
+    max-width: 916px;
+    min-width: 0;
+    margin-inline: auto;
+  }
+
+  .catalog-products__header {
+    width: 100%;
+    max-width: 916px;
+    min-width: 0;
+  }
+
+  .catalog-products__grid {
+    width: 100%;
+    max-width: 916px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 27px;
+  }
+
+  .catalog-page__layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 45px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .catalog-products__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .catalog-page__layout{
+    width: 940px;
+  }
+}

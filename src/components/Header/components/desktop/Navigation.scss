@@ -50,3 +50,25 @@
     margin-top: 4px;
   }
 }
+
+@media (max-width:1450px) {
+  .navigation__button,
+  .navigation__link{
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 1025px){
+  .navigation__button{
+    gap: 3px;
+  }
+  
+  .navigation__button,
+  .navigation__link{
+    font-size: 1.2rem;
+  }
+
+  .navigation__button img{
+    width: 8px;
+    height: 8px;
+  }
+}

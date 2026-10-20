@@ -246,10 +246,105 @@
     color: #fff;
     font-family: 'rfDewiBold';
     font-size: 1.1rem;
+  }
+}
 
-    &:disabled {
-      background: #777;
-      cursor: not-allowed;
-    }
+@media (max-width: 1450px) {
+  .cart-page__main {
+    max-width: 1150px;
+  }
+
+  .cart-page__content {
+    gap: 24px;
+    grid-template-columns: minmax(0, 1fr) 280px;
+  }
+}
+
+@media (max-width: 1200px) {
+
+  .catalog-filter__title,
+  .product-card__title,
+  .catalog-products__sort select,
+  .catalog-products__sort,
+  .cart-item__price {
+    font-size: 1.2rem;
+  }
+
+  .product-card__price,
+  .catalog-filter__options a,
+  .catalog-filter__checkbox,
+  .catalog-pagination__page {
+    font-size: 1.1rem;
+  }
+
+  .catalog-products__title,
+  .cart-page__title {
+    font-size: 2.5rem;
+  }
+
+  .catalog-pagination__arrow,
+  .catalog-pagination__page {
+    width: 30px;
+    height: 30px;
+  }
+
+  .catalog-pagination__arrow img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .cart-page__content {
+    margin-top: 25px;
+  }
+
+  .cart-item__name,
+  .cart-item__controls button {
+    font-size: 1.3rem;
+  }
+
+  .cart-item__right strong {
+    font-size: 1.4rem;
+  }
+
+  .cart-summary__checkout {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 1025px) {
+
+  .catalog-filter__title,
+  .product-card__title,
+  .catalog-products__sort select,
+  .catalog-products__sort,
+  .cart-item__price {
+    font-size: 1.2rem;
+  }
+
+  .product-card__price,
+  .catalog-filter__options a,
+  .catalog-filter__checkbox,
+  .catalog-pagination__page {
+    font-size: 1.1rem;
+  }
+
+  .catalog-products__title,
+  .cart-page__title {
+    font-size: 2rem;
+  }
+
+  .catalog-pagination{
+    margin: 39px 0 20px;
+  }
+
+  .catalog-pagination__arrow,
+  .catalog-pagination__page {
+    width: 27px;
+    height: 27px;
+  }
+
+  .catalog-pagination__arrow img {
+    width: 14px;
+    height: 14px;
   }
 }

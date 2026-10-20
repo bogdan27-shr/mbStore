@@ -1,3 +1,43 @@
+@use '../../styles/variables' as *;
+
+.header-pc {
+  width: 100%;
+  padding: 33px 0;
+  background-color: $color-text;
+}
+
+.header-pc__inner {
+  display: flex;
+  @include flex-between;
+  gap: 120px;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 14.5833vw, 280px);
+
+  &--catalog {
+    .navigation {
+      display: none;
+    }
+  }
+}
+
 .logo {
   padding: 3px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1450px) {
+  .header-pc{
+    padding: 9px 0;
+  }
+}
+@media (max-width: 1025px) {
+  .header-pc__inner{
+    width: 100%;
+    padding: 0 80px;
+  }
+  .logo{
+    width: 35px;
+  }
 }

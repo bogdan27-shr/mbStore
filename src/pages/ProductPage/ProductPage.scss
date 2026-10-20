@@ -77,7 +77,7 @@
   &__thumbnail {
     @include flex-center;
     width: 100%;
-    height: 48px;
+    height: 75px;
     padding: 3px;
     border: none;
     background: transparent;
@@ -308,5 +308,126 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
+  }
+}
+
+
+
+.product__purchase-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.product__purchase-buttons .product__add-button,
+.product__buy-button {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 16px;
+  border: 1px solid #111;
+  border-radius: 3px;
+  font-family: 'rfDewiBold';
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.product__purchase-buttons .product__add-button {
+  background: #fff;
+  color: #111;
+
+  &:hover {
+    background: #eee;
+  }
+}
+
+.product__buy-button {
+  background: #111;
+  color: #fff;
+
+  &:hover {
+    background: #333;
+  }
+}
+
+
+@media (max-width: 1450px) {
+  .product {
+    max-width: 1050px;
+    gap: 40px;
+  }
+
+  .product__main-image {
+    height: 320px;
+  }
+
+  .product__title {
+    font-size: 2.8rem;
+  }
+
+  .product-details__tabs,
+  .product-details__list,
+  .product-details__text {
+    max-width: 1050px;
+  }
+
+  .recommended-products {
+    max-width: 1050px;
+  }
+
+  .recommended-products__grid {
+    gap: 16px;
+  }
+
+  .product-page__breadcrumbs {
+    width: 1050px;
+  }
+
+  .product-card__title {
+    font-size: 1.5rem;
+  }
+
+  .product-card__price {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 1050px) {
+  .product-page__breadcrumbs {
+    width: 950px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .product {
+    max-width: 850px;
+  }
+  .product-details{
+    width: 900px;
+    margin: 0 auto;
+  }
+  .product__gallery{
+    width: 330px;
+  }
+  .product__title{
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+  }
+  .product__label{
+    font-size: 1.2rem;
+  }
+  .product__size{
+    min-height: 33px;
+  }
+}
+
+@media (max-width: 970px) {
+  .product-page__breadcrumbs {
+    width: 850px;
   }
 }

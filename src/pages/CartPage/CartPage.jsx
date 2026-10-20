@@ -1,6 +1,6 @@
 import './CartPage.scss';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Header from '../../components/Header/Header';
@@ -17,6 +17,7 @@ import {
 export default function CartPage() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
+  const navigate = useNavigate();
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -148,9 +149,9 @@ export default function CartPage() {
               <button
                 className="cart-summary__checkout"
                 type="button"
-                disabled
+                onClick={() => navigate('/checkout')}
               >
-                CHECKOUT — COMING SOON
+                PROCEED TO CHECKOUT
               </button>
             </aside>
           </div>

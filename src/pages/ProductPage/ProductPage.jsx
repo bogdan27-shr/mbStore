@@ -1,7 +1,7 @@
 import './ProductPage.scss';
 
 import { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { addToCart } from '../../features/cart/cartSlice';
@@ -23,6 +23,8 @@ export default function ProductPage() {
   const [activeImage, setActiveImage] = useState(0);
   const [activeTab, setActiveTab] = useState('Details');
   const [selectedSize, setSelectedSize] = useState(null);
+
+  const navigate = useNavigate();
 
   //настройка модалки start
   const dispatch = useDispatch();
@@ -120,6 +122,31 @@ export default function ProductPage() {
       : [];
   //определение категории и подставление размеров end
 
+  function handleBuyNow() {
+    if (sizes.length > 0 && !selectedSize) {
+      setModal({
+        isOpen: true,
+        type: 'error',
+        title: 'SELECT A SIZE',
+        message: 'Please select a size before buying this product.',
+      });
+
+      return;
+    }
+
+    navigate('/checkout', {
+      state: {
+        items: [
+          {
+            ...product,
+            selectedSize: selectedSize || null,
+            quantity: 1,
+          },
+        ],
+      },
+    });
+  }
+
   const tabs = ['Details', 'Shipping', 'Payment', 'FAQ'];
 
   return (
@@ -208,46 +235,61 @@ export default function ProductPage() {
               </div>
             )}
 
+
             <div className="product__purchase">
               <div>
-                <p className="product__price">{product.price.toFixed(2)} $</p>
+                <p className="product__price">
+                  {product.price.toFixed(2)} $
+                </p>
+
                 <p className="product__availability">
                   {product.availabilityStatus || 'Check availability'}
                 </p>
               </div>
 
-              <button
-                className="product__add-button"
-                type="button"
-                onClick={() => {
-                  if (sizes.length > 0 && !selectedSize) {
+              <div className="product__purchase-buttons">
+                <button
+                  className="product__add-button"
+                  type="button"
+                  onClick={() => {
+                    if (sizes.length > 0 && !selectedSize) {
+                      setModal({
+                        isOpen: true,
+                        type: 'error',
+                        title: 'SELECT A SIZE',
+                        message: 'Please select a size before adding this product to your cart.',
+                      });
+
+                      return;
+                    }
+
+                    dispatch(
+                      addToCart({
+                        ...product,
+                        selectedSize: selectedSize || null,
+                        quantity: 1,
+                      })
+                    );
+
                     setModal({
                       isOpen: true,
-                      type: 'error',
-                      title: 'SELECT A SIZE',
-                      message: 'Please select a size before adding this product to your cart.',
+                      type: 'success',
+                      title: 'ADDED TO CART',
+                      message: `${product.title} has been added to your cart.`,
                     });
-                    return;
-                  }
+                  }}
+                >
+                  ADD TO CART
+                </button>
 
-                  dispatch(
-                    addToCart({
-                      ...product,
-                      selectedSize: selectedSize || null,
-                      quantity: 1,
-                    })
-                  );
-
-                  setModal({
-                    isOpen: true,
-                    type: 'success',
-                    title: 'ADDED TO CART',
-                    message: `${product.title} has been added to your cart.`,
-                  });
-                }}
-              >
-                ADD TO CART
-              </button>
+                <button
+                  className="product__buy-button"
+                  type="button"
+                  onClick={handleBuyNow}
+                >
+                  BUY NOW
+                </button>
+              </div>
             </div>
           </div>
         </section>

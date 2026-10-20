@@ -127,3 +127,145 @@
     }
   }
 }
+
+@media (max-width: 1650px) {
+  .home-banner {
+    max-width: 1400px;
+  }
+}
+
+@media (max-width: 1450px) {
+  .home-banner {
+    max-width: 1090px;
+  }
+
+  .home-banner__content {
+    left: 65px;
+    max-width: 420px;
+    top: 40%;
+  }
+
+  .home-banner__title {
+    font-size: 4.5rem;
+  }
+
+  .home-banner__arrow {
+    flex-basis: 55px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .home-banner__slide--second {
+    .home-banner__content {
+      right: 65px;
+    }
+  }
+
+  .home-banner__arrow {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+
+    img {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .home-banner__controls {
+    gap: 10px;
+    left: 65px;
+    bottom: 25px;
+  }
+}
+
+@media (max-width: 1281px) {
+  .home-banner {
+    max-width: 1000px;
+    width: calc(100% - 48px);
+  }
+
+  .home-banner__viewport {
+    height: 340px;
+  }
+
+  .home-banner__content {
+    top: 35%;
+  }
+
+  .home-banner__title {
+    font-size: 3.3rem;
+    margin: 0 0 12px;
+  }
+
+  .home-banner__description {
+    margin: 0 0 12px;
+  }
+
+  .home-banner__button {
+    padding: 0 14px;
+  }
+
+  .home-banner__controls {
+    bottom: 20px;
+  }
+
+  .home-banner__arrow {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .home-banner__arrow img {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media (max-width: 961px) {
+  .home-banner {
+    margin: 25px auto 0;
+  }
+
+  .home-banner__viewport {
+    margin: 0 auto;
+    height: 230px;
+    width: 750px;
+  }
+
+  .home-banner__controls {
+    bottom: 20px;
+  }
+
+  .home-banner__arrow {
+    flex-basis: 25px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .home-banner__content {
+    top: 30%;
+  }
+
+  .home-banner__title {
+    font-size: 2.3rem;
+    margin: 0 0 3px;
+    line-height: 2.2rem;
+  }
+
+  .home-banner__description {
+    font-size: 1.2rem;
+    margin: 0 0 7px;
+  }
+
+  .home-banner__button {
+    font-size: 1rem;
+    min-height: 30px;
+    padding: 0 8px;
+  }
+
+  .home-banner__arrow img{
+    height: 6px;
+    width: 6px;
+  }
+}
